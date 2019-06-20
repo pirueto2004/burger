@@ -25,7 +25,7 @@ body {
 
 /* Burger background image*/
 body {
-    background-image: url("/assets/img/burger.jpg");
+    background-image: url("/public/assets/images/burger-bg2.jpg");
     /*Photo by Gianna Ciaramello on Unsplash*/
     background-repeat: no-repeat;
     background-size: cover;

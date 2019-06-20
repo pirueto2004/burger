@@ -1,19 +1,21 @@
 var mysql = require("mysql");
-var connection;
-// var connection = mysql.createConnection({
-//   host: "localhost",
-//   port: 3306,
-//   user: "root",
-//   password: "Timbre@1966",
-//   database: "burgers_db"
-// });
+
+//Read and set any environment variables with the dotenv package.
+require("dotenv").config();
+
+//Define database connection properties (host, user, password, and database name)
+//Use production database when deployed.
 if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
+  var connection = mysql.createConnection(process.env.JAWSDB_URL);
+} 
+else 
+{
+  //else use localhost database for local development.
+  //MySQL password is passed into connection.js from the .env file using the dotenv npm package.
+  var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Timbre@1966',
+    password: process.env.MYSQL_PASSWORD,
     database: 'burgers_db'
   });
 };
