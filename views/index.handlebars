@@ -3,30 +3,71 @@
     <h1 class="display-4" id="app-title">Delicious Burger <img src="/assets/images/burger2.png"></h1>
     <p class="lead">Welcome to Delicious Burger. Home of the Juicy Burger.</p>
 </div>
-<h1>Eat-Da-Burger!</h1>
+<h1 class="text-center py-4 text-danger">Eat-Da-Burger!</h1>
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-6">
+            <div class="card border border-warning">
+                <div class="card-header bg-warning text-white">
+                    <h2>Burger Menu</h2>
+                </div>
+                <!--Div to hold burgers that have not been devoured yet-->
+                <div class="card-body">
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgers/burger-block devour=false}}
+                        {{/unless}}
+                        {{/each}}
+                </div>
+            </div>
+        </div>
 
-<div class="card border border-warning">
-    <div class="card-header bg-warning text-white">
-        Burgers
+        <div class="col-md-6">
+            <div class="card devoured-card">
+                <div class="card-header bg-warning text-white" id="devoured-card-header">
+                <h2>Devoured burgers</h2>
+                </div>
+                <!--When a burger has been devoured, put burger here-->
+                <div class="card-body">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        {{> burgers/burger-devoured devour=true}}
+                    {{/if}}
+                {{/each}}
+                </div>
+            </div>
+        </div>   
     </div>
-    <!--Div to hold burgers that have not been devoured yet-->
-    <div class="card-body">
-            {{#each burgers}}
-            {{#unless devoured}}
-                {{> burgers/burger-block devour=false}}
-            {{/unless}}
-            {{/each}}
+
+    <div class="row my-4">
+        <div class="col-md-12">
+            <div class="card border border-warning">
+                <div class="card-header bg-warning text-white">
+                Can I take your order?
+                </div>
+                <!--Create/add burger form-->
+                <div class="card-body">
+                <form class="create-form">
+                    <div class="form-group">
+                    <label for="burger">Place order here:</label>
+                    <input type="text" class="form-control" id="burgerToGo" placeholder="">
+                    </div>
+                    <button class="btn btn-danger" type="submit">Place order</button>
+                </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-
-<h2>Add a Burger</h2>
+<h2 class="py-4 text-center text-danger">Add a Burger</h2>
 <form class="create-form">
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
+  <div class="form-group bg-secondary text-center py-3">
+    <label class="mr-2" for="ca">Burger Name:</label>
     <input type="text" id="burger" name="name">
+    <button class="btn btn-sm btn-danger" type="submit">Add Burger</button>
   </div>
 
- <button type="submit">Add Burger</button>
+ 
 </form>
