@@ -8,7 +8,7 @@ $(function() {
         //Grab burger name from form field.
         //When user submits burger name, set devoured state to false.
         var newBurger = {
-        burger_name: $("#burgerToGo").val().trim(),
+        burger_name: $("#burger").val().trim(),
         devoured: 0
         };
 
