@@ -15,8 +15,8 @@ This project also follows the MVC (Model-View-Controller) design pattern. The MV
 ## Structure of the project
 
 The project directory structure is set up as follows:
-
-<b>server.js</b>: This file does the following:
+<ul>
+<li><b>server.js</b>: This file does the following:
 
 Defines and requires the dependencies, including express, body-parser, and express-handlebars.
 Sets up the Express server.
@@ -24,30 +24,36 @@ Sets up the Express server to handle data parsing using body-parser.
 Points the server to the API routes, which gives the server a map of how to respond when users visit or request data from various URLs.
 Defines the port the server is listening on.
 Starts the server.
-Allows the app to serve static content from the public directory.
-<b>public</b>: Contains the static content (images, Javascript, and CSS).
+Allows the app to serve static content from the public directory.</li>
 
-<b>assets/css/style.css</b>: External CSS stylesheet.
-<b>assets/images</b>: Contains icons and images used in the application.
-<b>assets/js/burger.js</b>: Contains the jQuery ajax POST, DELETE, and PUT requests for adding a burger, throwing away a burger, and updating the devoured value for a burger, respectively.
-<b>models</b>: Contains a file called burger.js, which contains functions used to manage the application data and interact with the database.
+<li><b>public</b>: Contains the static content (images, Javascript, and CSS).
+    <ul>
+        <li><b>assets/css/style.css</b>: External CSS stylesheet.</li>
+        <li><b>assets/images</b>: Contains icons and images used in the application.</li>
+        <li><b>assets/js/burger.js</b>: Contains the jQuery ajax POST, DELETE, and PUT requests for adding a burger, throwing away a burger, and updating the devoured value for a burger, respectively.</li>
+        <li><b>models</b>: Contains a file called burger.js, which contains functions used to manage the application data and interact with the database. The burger.js file also includes the code that will call the ORM functions using burger specific input for the ORM.</li>
+    </ul>
+</li>
 
-The burger.js file also includes the code that will call the ORM functions using burger specific input for the ORM.
-
-<b>db</b>: Contains 2 files:
+<li><b>db</b>: Contains 2 files:
     <ul>
         <li><b>schema.sql</b>: The database schema. The schema is what describes the structure of the database table, and the datatypes that each column of the table can contain. For this project, the database includes one table that includes columns for id, burger name, and devoured state (true or false).</li>
         <li><b>seeds.sql</b>: Used to populate the table in the development database with some starter burger data.</li>
     </ul>
-<b>config</b>: Contains 2 files.
+</li>
+
+<li><b>config</b>: Contains 2 files.
     <ul>
         <li><b>connection.js</b>: Contains the code to connect Node to MySQL.</li>
         <li><b>orm.js</b>: Contains the methods that will execute the necessary MySQL commands in the controllers. These methods are used to retrieve and store data in the database.</li>
     </ul>
-<b>controllers</b>: Contains a file called burgersController.js, which contains different routes (GET, POST, PUT, and DELETE). These routes are used to pass information to and from the view and model objects.
+</li>
 
-<b>views</b>: Contains the Handlebars files, which are templates used to generate the html files.
+<li><b>controllers</b>: Contains a file called burgersController.js, which contains different routes (GET, POST, PUT, and DELETE). These routes are used to pass information to and from the view and model objects.</li>
 
-<b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.
-<b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.
-<b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.
+<li><b>views</b>: Contains the Handlebars files, which are templates used to generate the html files.</li>
+
+<li><b>package.json</b>: Lists the project dependencies (third party npm packages) and their version numbers.</li>
+<li><b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.</li>
+<li><b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.</li>
+</ul>
