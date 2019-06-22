@@ -57,3 +57,21 @@ Allows the app to serve static content from the public directory.</li>
 <li><b>.gitignore</b>: Anything listed inside this file will not be tracked by GitHub when code is committed.</li>
 <li><b>package-lock.json</b>: Dependency tree for the project. Lists all the dependencies and their versions.</li>
 </ul>
+
+## Technologies used to build this app
+
+<ul><b>Backend technologies</b>
+    <li><b>Node.js</b></li>
+    <li><b>MySQL</b></li>
+    <li><b>Express</b></li>
+    <li><b>ORM - Object Relational Mapping</b></li>
+</ul>
+
+<ul><b>Frontend technologies</b>
+    <li><b>HTML</b></li>
+    <li><b>CSS</b></li>
+    <li><b>Bootstrap</b></li>
+    <li><b>Javascript</b></li>
+    <li><b>jQuery</b></li>
+    <li><b>Handlebars</b></li>
+</ul>
