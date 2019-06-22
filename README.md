@@ -60,14 +60,18 @@ Allows the app to serve static content from the public directory.</li>
 
 ## Technologies used to build this app
 
-<ul><b>Backend technologies</b>
+### Backend technologies
+
+<ul>
     <li><b>Node.js</b></li>
     <li><b>MySQL</b></li>
     <li><b>Express</b></li>
     <li><b>ORM - Object Relational Mapping</b></li>
 </ul>
 
-<ul><b>Frontend technologies</b>
+### Frontend technologies
+
+<ul>
     <li><b>HTML</b></li>
     <li><b>CSS</b></li>
     <li><b>Bootstrap</b></li>
